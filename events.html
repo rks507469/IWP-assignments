@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        //onload Event
+        const loadFunction = () => {
+            window.alert("Document has been loaded");
+        }
+        //uncommnent this line after doing full project
+        //window.onload = load;
+        
+        //onunload Event
+        const unloadFunction = () => {
+            alert("Do you want to exit this website?");
+        }
+        window.unload = unloadFunction;
+    </script>
+</head>
+<body>
+    <p>Enter your name: <input id="inputBox" type="text" onfocus="inputFocused()" onblur="inputBlur()" onchange="inputChange()"></p>
+    <div id="outputBox"></div>
+    <div id="outputBoxValue"></div>
+    <script type="text/javascript">
+        inputBox = document.querySelector("#inputBox");
+        outputBox = document.querySelector("#outputBox");
+        outputBoxValue = document.querySelector("#outputBoxValue");
+        //onfocus
+        function inputFocused() {
+            inputBox.style.background = "blue";
+            outputBox.innerHTML = "<p>Box has been Focused</p>";
+        }
+        //onblur
+        function inputBlur() {
+            inputBox.style.background = "white";
+            outputBox.innerHTML = "<p>Box has been Blured</p>";
+        }
+        //onchange
+        function inputChange() {
+            outputBoxValue.innerHTML = "<p>"+inputBox.value+"</p>";
+        }
+    </script>
+</body>
+</html>

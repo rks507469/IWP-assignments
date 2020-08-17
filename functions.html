@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Functions</title>
+    <script type="text/javascript">
+        function calculateTemprature(fahrenheit) {
+            return (5/9)*(fahrenheit - 32);
+        }
+    </script>
+</head>
+<body>
+    <div id="showTemp"></div>
+    <script type="text/Javascript">
+        showTemp = document.querySelector("#showTemp");
+        showTemp.innerHTML = "<p>Temprature in Fahrenheit is: <strong>" + calculateTemprature(44) + "<strong></p>";
+    </script>
+    <p>This result is produced by the Function</p>
+</body>
+</html>
