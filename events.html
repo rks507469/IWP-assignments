@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            margin-top: 30px;
+        }
+    </style>
     <script type="text/javascript">
         //onload Event
         const loadFunction = () => {
@@ -20,13 +28,22 @@
     </script>
 </head>
 <body>
+    <form onsubmit="inputSubmitted()">
     <p>Enter your name: <input id="inputBox" type="text" onfocus="inputFocused()" onblur="inputBlur()" onchange="inputChange()"></p>
     <div id="outputBox"></div>
     <div id="outputBoxValue"></div>
+    <input type="submit" >
+    <div class="box" id="square" onmouseover="overBox()" onmouseout="outBox()"></div>
+    <div id="output"></div>
+    </form>
+    
+
     <script type="text/javascript">
         inputBox = document.querySelector("#inputBox");
         outputBox = document.querySelector("#outputBox");
         outputBoxValue = document.querySelector("#outputBoxValue");
+        box = document.querySelector("#square");
+        output = document.querySelector("#output");
         //onfocus
         function inputFocused() {
             inputBox.style.background = "blue";
@@ -40,6 +57,21 @@
         //onchange
         function inputChange() {
             outputBoxValue.innerHTML = "<p>"+inputBox.value+"</p>";
+        }
+
+        //onSubmit
+        function inputSubmitted() {
+            alert("Do you want to submit the program!");
+        }
+        
+        //onMouseOver
+        function overBox() {
+            output.innerHTML = "<p>OnMouseOver</p>";
+        }
+
+        //onMouseOut
+        function outBox() {
+            output.innerHTML = "<p>OnMouseOut</p>";
         }
     </script>
 </body>
